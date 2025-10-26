@@ -22,7 +22,7 @@ public class Interfaz{
                     sist.agregarJugador(ingresarJugador());
                     break;                    
                 case 2:
-                    
+                    elegirJugadores(sist);
                     break;
                 case 3:
                     elegirJugadores(sist);

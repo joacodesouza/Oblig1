@@ -43,8 +43,7 @@ public class Juego {
             
             // Procesar jugada
             if (validarJugada(jugada)) {
-                // Colocar banda en el tablero
-                colocarBanda(jugada);
+                
                 // Cambiar turno
                 turnoActual = (turnoActual == jugadorBlanco) ? jugadorNegro : jugadorBlanco;
                 bandasRestantes--;
@@ -62,18 +61,7 @@ public class Juego {
         return true;
     }
     
-    private void colocarBanda(String jugada) {
-        char letra = jugada.toUpperCase().charAt(0);
-        int fila = Character.getNumericValue(jugada.charAt(1)) - 1;
-        char direccion = jugada.charAt(2);
-        int longitud = jugada.length() > 3 ? Character.getNumericValue(jugada.charAt(3)) : 4;
-        
-        // Convertir letra a columna
-        int columna = (letra - 'A') * 2;
-        
-        // Colocar banda en el tablero
-        tablero.colocarBanda(fila, columna, String.valueOf(direccion), longitud);
-    }
+    
 
     private void mostrarResultadoFinal() {
         System.out.println("\n=== RESULTADO FINAL ===");

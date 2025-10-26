@@ -2,12 +2,12 @@
 import java.util.*;
 
 public class Tablero {
-    private static final int FILAS = 13;
-    private static final int COLUMNAS = 25;
+    private static final int FILAS = 3;
+    private static final int COLUMNAS = 6;
     //private String[][] tableroMatriz;  // Representación del tablero
     
     
-    public imprimirTablero() {
+    public void imprimirTablero() {
         
         
         
@@ -22,7 +22,7 @@ public class Tablero {
                 // Encabezado de columnas
                 System.out.print("    ");
                 for (int c = 1; c <= columnas; c++) {
-                    System.out.print("  " + c + " ");
+                    System.out.print(" " + c + " ");
                 }
                 System.out.println();
         
@@ -32,7 +32,7 @@ public class Tablero {
                     // Línea superior de la fila
                     System.out.print("   ");
                     for (int c = 0; c < columnas; c++) {
-                        System.out.print("+---");
+                        System.out.print("+--");
                     }
                     System.out.println("+");
         
@@ -45,7 +45,7 @@ public class Tablero {
                         }
         
                         for (int c = 0; c < columnas; c++) {
-                            System.out.print("|   ");
+                            System.out.print("|  ");
                         }
                         System.out.println("|");
                     }
@@ -56,7 +56,7 @@ public class Tablero {
                 // Línea inferior final
                 System.out.print("   ");
                 for (int c = 0; c < columnas; c++) {
-                    System.out.print("+---");
+                    System.out.print("+--");
                 }
                 System.out.println("+");
             
