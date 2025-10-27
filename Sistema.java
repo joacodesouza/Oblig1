@@ -41,6 +41,29 @@ public class Sistema {
         });
     }
 
+    public void mostrarRanking() {
+        if (listajugadores == null || listajugadores.isEmpty()) {
+            System.out.println("\nNo hay jugadores registrados.\n");
+            return;
+        }
+
+        List<Jugador> copia = new ArrayList<>(listajugadores);
+        copia.sort(new Comparator<Jugador>() {
+            @Override
+            public int compare(Jugador j1, Jugador j2) {
+                return Integer.compare(j2.getPuntaje(), j1.getPuntaje());
+            }
+        });
+
+        System.out.println("\n=== Ranking de Jugadores ===\n");
+        int posicion = 1;
+        for (Jugador jugador : copia) {
+            System.out.println(posicion + ". " + jugador.getNombre() + " - Puntos: " + jugador.getPuntaje());
+            posicion++;
+        }
+        System.out.println();
+    }
+
     public void elegirJugador(int numElegido, String color){
         // Validar que el índice esté dentro de los límites del ArrayList
         if (numElegido > 0 && numElegido <= getListaJugadores().size()) {

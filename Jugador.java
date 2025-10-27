@@ -26,6 +26,16 @@ public class Jugador {
         this.puntaje = puntaje;
     }
 
+    public void incrementarPuntaje() {
+        this.puntaje++;
+    }
+
+    public void decrementarPuntaje() {
+        if (this.puntaje > 0) {
+            this.puntaje--;
+        }
+    }
+
     //Constructor
     public Jugador(String nombre, int edad) {
         this.nombre = nombre;
