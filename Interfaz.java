@@ -26,11 +26,11 @@ public class Interfaz{
                     break;
                 case 3:
                     elegirJugadores(sist);
-                    
+
                     break;
                 case 4:
-                    
-                    break;              
+                    sist.mostrarRanking();
+                    break;
             }
         }
     }
@@ -109,7 +109,13 @@ public class Interfaz{
         Jugador jugadorBlanco = sist.getListaJugadores().get(jugBlanco-1);
         Jugador jugadorNegro = sist.getListaJugadores().get(jugNegro-1);
         Juego juego = new Juego();
+        System.out.println("\nFormato de jugadas: \n"
+                + "- Para colocar una pieza: <fila><columna><orientación> (ej.: A3H).\n"
+                + "- Para retirar una pieza propia: -<fila><columna><orientación> (ej.: -B4D).\n"
+                + "  Orientaciones válidas: H (horizontal), V (vertical), D (diagonal \\\\), I (diagonal /).\n"
+                + "- Cada alineación de tres O u X otorga un punto al color correspondiente.\n"
+                + "- Ingrese X para finalizar la partida anticipadamente.\n");
         juego.comenzarPartida(jugadorBlanco, jugadorNegro);
-        
+
     }
 }
